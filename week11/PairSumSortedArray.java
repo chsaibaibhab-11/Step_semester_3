@@ -1,0 +1,26 @@
+public class PairSumSortedArray {
+    public static void pairSumSorted(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum == target) {
+                System.out.println("(" + nums[left] + ", " + nums[right] + ")");
+                return;
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        System.out.println("Not Found");
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {-4, -1, 0, 3, 5, 9};
+        int[] nums2 = {1, 2, 3};
+        pairSumSorted(nums1, 4);
+        pairSumSorted(nums2, 100);
+    }
+}
